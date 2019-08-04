@@ -6,9 +6,9 @@ public class Main {
 
     // items to be used in all the rooms
     static int scissors = 0;
-    static int lighter = 1;
+    static int lighter = 0;
     static int socks = 0;
-    static int roomKey = 1;
+    static int roomKey = 0;
 
     static int greenLock = 0;            // Condition of the green door
     static int exitLevelZero = 0;        // Game ends when exitLevelZero = 1
@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //gameIntro();
+        gameIntro();
 
         System.out.println("You are standing in a dark room, all you can see is three glowy doors: yellow, orange and green");
 
