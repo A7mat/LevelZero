@@ -12,6 +12,8 @@ public class Main {
 
     static int greenLock = 0;            // Condition of the green door
     static int exitLevelZero = 0;        // Game ends when exitLevelZero = 1
+    static Scanner scanner = new Scanner(System.in);
+    static String player = "";
 
 
     public static void gameIntro() {
@@ -19,6 +21,9 @@ public class Main {
         System.out.println("# WELCOME TO LEVELZERO #");
         System.out.println("########################");
         try {
+            Thread.sleep(700);
+            System.out.println("What is your name?");
+            player = scanner.next();
             Thread.sleep(700);
             System.out.println("Your game will start in..");
             Thread.sleep(700);
@@ -42,11 +47,10 @@ public class Main {
         int key = 0;
         while (key == 0) {
 
-            if (exitLevelZero == 1) {            // exitLevelZero == 1 is the end condition of the game
+            if (exitLevelZero == 1) {            // SPOILER!! ~~~~~~~~~~~~~~~~~~~~~~~ exitLevelZero == 1 is the end condition of the game
                 return;
             }
             System.out.println("keywords are: open, yellow, orange, green.");
-            Scanner scanner = new Scanner(System.in);
             String door = scanner.nextLine();
 
             // YELLOW DOOR
@@ -112,22 +116,31 @@ public class Main {
             }
             // Dialog 1
             else if (yellow.equals("talk to man")) {
-
-                System.out.println("Player: Where am I?");
+                try {
+                    Thread.sleep(700);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.printf("%s: Where am I?%n", player);
                 System.out.println("Man: In the room with the yellow door");
-                System.out.println("Player: No I mean in general! how can I get out?");
+                System.out.printf("%s: No I mean in general! how can I get out?%n", player);
                 System.out.println("Man: Just 'exit' your way out man");
-                System.out.println("Player: uh.. what??");
-                System.out.println("Man: DON'T YOU GET IT! IT'S NONE DIMENSIONAL");
-                System.out.println("Player: I.. ");
+                System.out.printf("%s: uh.. what??%n", player);
+                System.out.println("Man: DON'T YOU GET IT! IT'S NONE-DIMENSIONAL");
+                System.out.printf("%s: I..%n", player);
                 System.out.println("Man: DO YOU EVEN CHOOSE YOUR OWN WORDS?");
                 System.out.println("\n ...the man got out of control, try another order");
 
             }
             // Dialog 2
             else if (yellow.equals("talk to woman")) {
-                System.out.println("Woman: sorry young man, if I help you they might remove me from the..");
-                System.out.println("Player: remove you! what the hell is that supposed to mean?!");
+                try {
+                    Thread.sleep(700);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Woman: I'm terribly sorry young man, if I help you they might remove me from the..");
+                System.out.printf("%s: remove you! what the hell is that supposed to mean?!%n", player);
                 System.out.println("Woman: Look young man I've already said too much. Just keep that in mind: " +
                         "computers only understand ones and zeros. I can't tell you more than that\n");
 
@@ -171,7 +184,7 @@ public class Main {
 
                         int north = 0;
                         while (north == 0) {
-                            System.out.println("Keywords: check, exit, under, rug, room");
+                            System.out.println("Keywords: check, exit, room, rug, under");
                             String rug = scanner.nextLine();
                             if (rug.equals("check under rug")) {
                                 if (roomKey == 0) {
@@ -246,7 +259,7 @@ public class Main {
                     }
                     // West
                     else if (orientation.equals("go to west")) {
-                        System.out.println("You only see smelly garbage, nothing interesting here!");
+                        System.out.println("You only find smelly garbage, nothing interesting here!");
                     } else if (orientation.equals("back")) {
                         orientationKey = 1;
                     } else if (orientation.equals("exit room") || orientation.equals("exit")) {
@@ -327,7 +340,7 @@ public class Main {
                                                 System.out.println("Congrats! you figured your way out of LevelZero!\n==================================" +
                                                         "==================================\n.");
                                                 try {
-                                                    Thread.sleep(1000);
+                                                    Thread.sleep(2000);
                                                 } catch (InterruptedException e) {
                                                     e.printStackTrace();
                                                 }
@@ -424,3 +437,4 @@ public class Main {
         }
     }
 }
+
