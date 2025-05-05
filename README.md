@@ -1,6 +1,8 @@
-# 🗝️ LevelZero – A Text-Based Escape Room Game in Java
+# 🗝️ LevelZero
+## A Text-Based Escape Room Game in Java
 
-**LevelZero** is a terminal-based escape room game built in Java 🎮. It was created as the final project for an **"Introduction to Java"** course. Put your problem-solving skills to the test as you try to escape a locked room using only text commands!
+**LevelZero** is a terminal-based escape room game built in Java 🎮. It was created as the final project for the **"Introduction to Java"** course.
+Put your problem-solving skills to the test as you try to escape a locked room using only text commands!
 
 ---
 
